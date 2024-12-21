@@ -10,6 +10,8 @@ import random
 import text_classifier
 
 nltk.download('punkt')
+nltk.download('punkt_tab')
+
 
 def create_app():
     """
