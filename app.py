@@ -55,9 +55,8 @@ def create_app():
     if __name__ == "__main__":
         port = int(os.environ.get("PORT", 5000))
         app.run(host="0.0.0.0", port=port)
-        
-    return app
 
+    return app
 
 def load_model():
     """
@@ -68,3 +67,5 @@ def load_model():
     logprior = model['logprior']
     loglikelihood = model['loglikelihood']
     return logprior, loglikelihood
+
+app = create_app()
