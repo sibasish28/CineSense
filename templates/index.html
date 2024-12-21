@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/face.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+</head>
+
+<body class="neutral-bg">
+    {% include 'face.html' %}
+    <h2 id="prediction">- What do you think of the movie Avatar (2009) ? Leave a short review. -</h2>
+    {% include 'form.html' %}
+</body>
+</html>
+
+<script>
+    function clearForm() {
+        document.getElementById('reviewInput').value = "";
+    }
+
+    function sendReview() {
+        // Get the review input value
+        const review = document.getElementById('reviewInput').value;
+
+        console.log("going to send this from form!", review)
+
+        // Perform the asynchronous POST request
+        fetch('/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({review: review}),
+        })
+            .then(response => response.json())
+            .then(response => {
+                // update values dynamically
+                document.getElementById('prediction').innerHTML = response.prediction;
+                document.getElementById('face').className = response.mood;
+                document.getElementsByTagName('body')[0].className = response.mood + "-bg";
+            })
+            .catch(error => {
+                console.error('Error sending review:', error);
+            });
+    }
+</script>

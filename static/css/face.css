@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans");
+#body {
+  align-items: center;
+  display: flex;
+  font-family: "Comfortaa", sans-serif;
+  flex-direction: column;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #dbfff1;
+  border: 5px solid #000;
+  font-size: 15px;
+  padding: 5px 15px;
+}
+select:after {
+  border-color: #007bff transparent transparent transparent;
+  border-style: solid;
+  border-width: 8px 6px 0 6px;
+  content: "";
+  display: inline;
+  height: 0;
+  width: 0;
+}
+
+#face {
+  background: #dbfff1;
+  border: 13px solid #000;
+  border-radius: 50%;
+  height: 250px;
+  margin: 15px;
+  width: 250px;
+  transition: background 1s ease;
+}
+#face.angry {
+  background: #f25a4a;
+}
+
+.eye {
+  background: #000;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 80px;
+  height: 50px;
+  width: 50px;
+}
+.eye:last-child {
+  margin-left: 50px;
+}
+.angry .eye:last-child:before {
+  transform: rotateZ(-20deg);
+}
+.eye:after {
+  background: transparent;
+  border-radius: 50%;
+  content: "";
+  display: inline-block;
+  margin-left: -10px;
+  margin-top: 50px;
+  height: 50px;
+  width: 70px;
+  transition: background 1s ease, margin-top 0.3s ease;
+}
+.happy .eye:after {
+  background: #f25a4a;
+  margin-top: 30px;
+}
+.eye:before {
+  background: #dbfff1;
+  content: "";
+  display: inline-block;
+  margin-left: -10px;
+  margin-top: -30px;
+  position: absolute;
+  height: 30px;
+  width: 70px;
+  transition: background 1s ease, height 0.3s ease, transform 1s ease;
+}
+.annoyed .eye:before {
+  height: 50px;
+}
+.angry .eye:before {
+  background: #f25a4a;
+  height: 50px;
+  transform: rotateZ(20deg);
+}

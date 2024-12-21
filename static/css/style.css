@@ -1,0 +1,46 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: #F7971E; /* fallback for old browsers */
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    transition: background 10s ease;
+}
+
+body, button, input {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+body.happy-bg {
+    background: #F7971E; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFD200, #F7971E); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body.neutral-bg {
+    background: #d53369; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cbad6d, #d53369); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cbad6d, #d53369); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body.angry-bg {
+    background: #e53935; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #e35d5b, #e53935); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #e35d5b, #e53935); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body.annoyed-bg {
+    background: #c94b4b; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4b134f, #c94b4b); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
