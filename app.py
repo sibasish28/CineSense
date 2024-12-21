@@ -1,10 +1,15 @@
 import os
+import nltk
+
+# Ensure NLTK resources are downloaded
+
 
 from flask import Flask, request, render_template, jsonify
 import random
 
 import text_classifier
 
+nltk.download('punkt')
 
 def create_app():
     """

@@ -16,6 +16,7 @@ import warnings
 from sklearn.model_selection import train_test_split
 
 warnings.filterwarnings("ignore")
+nltk.download('punkt')
 
 # stemmer
 stemmer = PorterStemmer()
