@@ -1,4 +1,4 @@
-# Movie Review Sentiment Analysis
+# CineSense
 
 This Flask app deploys a Naive Bayes classifier model built from scratch to be used for instant-classification of inputted reviews.
 
